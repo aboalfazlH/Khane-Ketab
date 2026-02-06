@@ -12,7 +12,8 @@ class CustomUser(AbstractUser):
         validators=[phone_regex],
         max_length=15,
         unique=True,
-        verbose_name="شماره موبایل"
+        verbose_name="شماره موبایل",
+        help_text="تلفن همراه باید در قالب جهانی E.164 باشد (مثلاً +989123456789)."
     )
     email = models.EmailField("آدرس ایمیل",unique=True,)
     
