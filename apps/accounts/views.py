@@ -10,7 +10,7 @@ from apps.library.models import LibraryCard
 class SignUpView(generic.CreateView):
     form_class = SignUpForm
     template_name = "accounts/registration/register.html"
-    success_url = reverse_lazy("main-page")
+    success_url = reverse_lazy("create-library-card")
 
     def form_valid(self, form):
         response = super().form_valid(form)
