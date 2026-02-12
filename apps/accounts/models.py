@@ -20,4 +20,5 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = "phone_number"
     REQUIRED_FIELDS = ("username","email")
     def __str__(self):
-        return super().__str__()
+        full = self.get_full_name()
+        return full if full else self.username

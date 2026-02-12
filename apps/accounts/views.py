@@ -4,6 +4,7 @@ from .forms import SignUpForm
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,logout,mixins
+from .models import CustomUser
 
 
 class SignUpView(generic.CreateView):
@@ -33,3 +34,10 @@ class LogoutView(generic.View,mixins.LoginRequiredMixin):
     def post(self, request, *args, **kwargs):
         logout(request)
         return redirect("main-page")
+
+class UserPannelView(generic.DetailView):
+    model = CustomUser
+    template_name = "accounts/registration/pannel.html"
+    context_object_name = "user"
+    slug_field = "username"
+    slug_url_kwarg = "username"
