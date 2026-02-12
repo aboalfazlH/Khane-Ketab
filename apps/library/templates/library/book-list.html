@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+{% for book in books %}
+{{ book.name }}
+
+{% if book.price == 0 %}
+رایگان!
+{% else %}
+{{ book.price }} تومان
+{% endif %}
+{% empty %}
+<p>هیچی نداریم!</p>
+{% endfor %}
+{% endblock content %}
