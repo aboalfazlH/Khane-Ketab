@@ -17,19 +17,19 @@ class SignUpView(generic.CreateView):
         return response
 
 class LoginView(generic.FormView):
+    
     form_class = AuthenticationForm
     template_name = "accounts/registration/register.html"
     success_url = reverse_lazy("main-page")
     
     def form_valid(self, form):
-        response = super().form_valid(form)
-        login(self.request, self.object)
-        return response
-
+        user = form.get_user()
+        login(self.request, user)
+        return super().form_valid(form)
 class LogoutView(generic.View,mixins.LoginRequiredMixin):
     def get(self, request, *args, **kwargs):
-        return render("accounts/registration/logout.html")
+        return render(request,"accounts/registration/logout.html")
     
     def post(self, request, *args, **kwargs):
         logout(request)
-        return redirect("accounts:main-page")
+        return redirect("main-page")

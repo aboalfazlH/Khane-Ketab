@@ -11,6 +11,6 @@ class Book(models.Model):
     
     preview = models.FileField(verbose_name="پیش نمایش صفحات کتاب",validators=[FileExtensionValidator(allowed_extensions=["pdf"])],blank=True,null=True)
 
-    price = models.PositiveIntegerField(verbose_name="قیمت")
+    price = models.PositiveIntegerField(verbose_name="قیمت",default=0)
 
     author = models.ForeignKey(CustomUser,on_delete=models.CASCADE,verbose_name="نویسنده")
