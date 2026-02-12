@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,logout,mixins
 from .models import CustomUser
-
+from apps.library.models import LibraryCard
 
 class SignUpView(generic.CreateView):
     form_class = SignUpForm
@@ -41,3 +41,8 @@ class UserPannelView(generic.DetailView):
     context_object_name = "user"
     slug_field = "username"
     slug_url_kwarg = "username"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["library_card"]= LibraryCard.objects.get(user=self.object)
+        return context

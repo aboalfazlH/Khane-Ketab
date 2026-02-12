@@ -6,4 +6,12 @@
 
 {% block content %}
 <h1>پروفایل {{ user }}</h1>
+<div>
+<p>کارت کتابخانه</p>
+<p>نام: {{ user.first_name }}</p>
+<p>نام خانوادگی: {{ user.last_name }}</p>
+<p>سن:{% if not library_card.show_age %}پنهان شده توسط کاربر{% else %}{{library_card.age}}{% endif %}</p>
+<p>شهر:{% if not library_card.show_city %}پنهان شده توسط کاربر{% else %}{{library_card.city}}{% endif %}</p>
+<p>پایه تحصیلی:{% if not library_card.show_grade %}پنهان شده توسط کاربر{% else %}{{library_card.grade}}{% endif %}</p>
+</div>
 {% endblock content %}
