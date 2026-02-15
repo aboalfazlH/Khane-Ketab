@@ -16,6 +16,7 @@ class BookListView(generic.ListView):
         return context
 
 class BookCreateView(generic.CreateView):
+    model = Book
     form_class = BookForm
     template_name = "library/book-create.html"
     success_url = reverse_lazy("book-list")
@@ -23,6 +24,13 @@ class BookCreateView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class BookUpdateView(generic.UpdateView):
+    model = Book
+    form_class = BookForm
+    template_name = "library/book-create.html"
+    success_url = reverse_lazy("book-list")
+    pk_url_kwarg = "pk"
 
 class LibraryCardGenerateView(generic.CreateView):
     model = LibraryCard
