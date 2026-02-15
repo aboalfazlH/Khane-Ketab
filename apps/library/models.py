@@ -38,9 +38,10 @@ class Book(models.Model):
     name = models.CharField(verbose_name="نام کتاب",max_length=110)
     description = models.TextField(verbose_name="توضیحات کتاب",blank=True,null=True)
     summary = models.TextField(verbose_name="خلاصه کتاب",blank=True,null=True)
-    type = models.CharField(verbose_name="نوع کتاب",choices=BooksType,max_length=110)
+    book_type = models.CharField(verbose_name="نوع کتاب",choices=BooksType,max_length=110)
     book_image = models.ImageField(verbose_name="تصویر کتاب",blank=True,null=True)
-    
+    is_verify = models.BooleanField(verbose_name="تائید شده(بررسی شده)",default=False)   
+    is_active = models.BooleanField(verbose_name="فعال",default=False)   
     preview = models.FileField(verbose_name="پیش نمایش صفحات کتاب",validators=[FileExtensionValidator(allowed_extensions=["pdf"])],blank=True,null=True)
 
     price = models.PositiveIntegerField(verbose_name="قیمت",default=0)
