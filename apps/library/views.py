@@ -32,6 +32,12 @@ class BookUpdateView(generic.UpdateView):
     success_url = reverse_lazy("book-list")
     pk_url_kwarg = "pk"
 
+class BookDetailView(generic.DetailView):
+    model = Book
+    template_name = "library/book-detail.html"
+    pk_url_kwarg = "pk"
+    context_object_name = "book"
+
 class LibraryCardGenerateView(generic.CreateView):
     model = LibraryCard
     form_class = LibraryCardForm
