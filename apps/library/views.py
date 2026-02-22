@@ -12,7 +12,11 @@ class BookListView(generic.ListView):
     template_name = "library/book-list.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["books"] = Book.objects.filter(is_verify=True,is_active=True)
+        cat = self.request.GET.get("category")
+        if cat:
+            context["books"] = Book.objects.filter(is_verify=True,is_active=True,book_type=cat)
+        else:
+            context["books"] = Book.objects.filter(is_verify=True,is_active=True,)
         return context
 
 class BookCreateView(generic.CreateView):

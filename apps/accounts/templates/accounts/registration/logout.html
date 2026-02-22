@@ -4,6 +4,8 @@
 {% block content %}
 <form action="" method="post">
 {% csrf_token %}
-<button type="submit">خروج</button>
+<div class="d-grid gap-2 col-6 mx-auto">
+<button class="btn btn-danger mx-auto" type="submit">خروج</button>
+</div>
 </form>
 {% endblock content %}

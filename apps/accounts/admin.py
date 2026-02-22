@@ -22,8 +22,8 @@ class CustomUserAdmin(UserAdmin):
 
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        ("اطلاعات شخصی", {"fields": ("first_name", "last_name", "email", "phone_number")}),
-        ("دسترسی‌ها", {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
+        ("اطلاعات شخصی", {"fields": ("first_name", "last_name", "email", "phone_number",)}),
+        ("دسترسی‌ها", {"fields": ("is_active", "is_staff", "is_superuser","rate", "groups", "user_permissions")}),
         ("تاریخ‌ها", {"fields": ("last_login", "date_joined")}),
     )
 

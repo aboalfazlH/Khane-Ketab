@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <div class="parent-2">
+        <div class="text">
+            <p>
+                در این سایت یک کتابخانه و کتاب فروشی آنلاین داریم هر جای ایران که باشید کتاب ها از طریق اداره پست به دست
+                شما می رسند و در کتابخانه می توانید پی دی اف کتاب را بخرید
+            </p>
+            <form>
+                <input type="text" required placeholder="نام و نام خانوادگی">
+                <textarea placeholder="نظرات خود را بیان کنید"></textarea>
+                <input type="submit" class="submit" value="ارسال">
+            </form>
+        </div>
+        <div class="image">
+            <img src="{% static 'image/ketab.png' %}" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock content %}

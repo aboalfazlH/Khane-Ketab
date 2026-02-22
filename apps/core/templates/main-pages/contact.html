@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %} ">
+    <div class="body">
+        <div class="container">
+            <div class="nazar">
+                <h1>
+                    ارسال پیام
+                    send massage
+                </h1>
+                <form action="">
+                    <input type="text" placeholder="نام و نام خانوادگی">
+                    <input type="tel" placeholder="شماره تماس">
+                    <textarea name="" id="" placeholder="نظرات"></textarea>
+                    <input class="ersal" type="submit" value="ارسال">
+                </form>
+            </div>
+            <div class="ertebat">
+                <h1>
+                    راه های ارتباطی
+                    content ways
+                </h1>
+                <div class="adress add">سیرجان خیابان فرمانداری کوچه فرمانداری2 مدرسه آیت الله خامنه ای</div>
+                <div class="adress1 add"> 09384069211</div>
+                <div class="adress2 add">pedramnormandi@gmail.com</div>
+                <p class="tozih">برای ارتباط با ما از اطلاعات بالا استفاده کنید</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+{% endblock content %}

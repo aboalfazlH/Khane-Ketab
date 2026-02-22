@@ -1,7 +1,79 @@
 {% extends 'base/base.html' %}
-
+{% load static %}
 {% block title %}
 صفحه ی اصلی
 {% endblock title %}
 {% block content %}
+    <p class="p-10">برای دیدن انواع کتب روی متن های زیر کلیک کنید</p>
+    <div class="flex">
+        {% for book_type,label in book_types %}
+        <div onclick="window.location='library/list?category={{ book_type }}'" class="flex-item">{{ label }}</div>
+        {% endfor %}
+    </div>
+    <div class="race"><a href="race.html">مسابقات کتاب خوانی دانش آموزی</a></div>
+    <h1 class="h1-2">پر فروش ترین کتاب ها</h1>
+    <div class="parent" dir="rtl">
+        <div class="child">
+            <img src="image/9422f3b135a64b75937b20761bc08e73.webp" alt="">
+            <h3>سفرنامه</h3>
+            <p>1000000 ریال</p>
+            <button>خرید</button>
+        </div>
+        <div class="child">
+            <img src="image/9422f3b135a64b75937b20761bc08e73.webp" alt="">
+            <h3>سفرنامه</h3>
+            <p>1000000 ریال</p>
+            <button>خرید</button>
+        </div>
+        <div class="child">
+            <img src="image/9422f3b135a64b75937b20761bc08e73.webp" alt="">
+            <h3>سفرنامه</h3>
+            <p>1000000 ریال</p>
+            <button>خرید</button>
+        </div>
+        <div class="child">
+            <a class="child-a" href="forosh.html"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
+        </div>
+    </div>
+
+    <h1 class="h1-2">کتاب های نفیس</h1>
+    <div class="parent" dir="rtl">
+        <div class="child">
+            <img src="image/3489284.jpg" alt="">
+            <h3>شاهنامه فردوسی</h3>
+            <p>12,800,000 ریال</p>
+            <button>خرید</button>
+        </div>
+        <div class="child">
+            <img src="image/5a1568c43d9f2df1e88f37dd3a7c4110d1923cba_1668861783.webp" alt="">
+            <h3>دیوان حافظ</h3>
+            <p>15,500,000 ریال</p>
+            <button>خرید</button>
+        </div>
+        <div class="child">
+            <img src="image/120655206.webp" alt="">
+            <h3>بوستان سعدی</h3>
+            <p>14,500,000 ریال</p>
+            <button>خرید</button>
+        </div>
+        <div class="child">
+            <a class="child-a" href="nafis.html"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
+        </div>
+    </div>
+    <h1 class="h1-2">نویسنده های معروف</h1>
+    <div class="parent" dir="rtl">
+    {% for author in famous_authors %}
+        <div class="child">
+            {{ author }}
+        </div>
+        {% empty %}
+        <div class="child">مگه اینجا نویسنده معروفم هست؟</div>
+    {% endfor %}
+        <div class="child">
+            <a class="child-a" href="write.html"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
+        </div>
+    </div>
+    <h2 class="h2-">نظرات خود را بیان کنید</h2>
+    <textarea class="textarea"></textarea>
+    <input class="submit" type="submit" value="ارسال">
 {% endblock content %}

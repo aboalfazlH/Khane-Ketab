@@ -4,9 +4,11 @@
 {% endblock title %}
 
 {% block content %}
+<div class="new">
 <form action='' method='post'>
 {% csrf_token %}
 {{ form.as_p }}
-<button type='submit'>تائید</button>
+<input class="sub" type="submit" value="ارسال">
 </form>
+</div>
 {% endblock content %}

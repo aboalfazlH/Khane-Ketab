@@ -4,10 +4,12 @@
 {% endblock title %}
 
 {% block content %}
-<form action="" method="post">
-{% csrf_token %}
-<h3>اطلاعات اصلی</h3>
-{{ form.as_p }}
-<button type="submit">عضویت در کتابخانه</button>
-</form>
+<div class="parent-2">
+    <h1>عضویت در سایت</h1>
+    <form action='' method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button style="width:56.5%;" type='submit'>تائید</button>
+    </form>
+</div>
 {% endblock content %}
