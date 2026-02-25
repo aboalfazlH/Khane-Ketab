@@ -4,7 +4,6 @@
 صفحه ی اصلی
 {% endblock title %}
 {% block content %}
-    <p class="p-10">برای دیدن انواع کتب روی متن های زیر کلیک کنید</p>
     <div class="flex">
         {% for book_type,label in book_types %}
         <div onclick="window.location='library/list?category={{ book_type }}'" class="flex-item">{{ label }}</div>

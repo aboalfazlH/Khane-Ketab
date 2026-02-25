@@ -90,39 +90,13 @@ body {
 
 }
 
-.flex {
-    width: 80%;
-    box-shadow: 0 0 10px 1px black;
-    margin: 50px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-image: linear-gradient(to right, #964b00, #ffc499);
-}
-
-.flex-item {
-    position: relative;
-    width: 250px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px 1px black;
-    font-size: 35px;
-    font-weight: 900px;
-    background-color: antiquewhite;
-    transition: 0.5s;
-    color: #008000;
-    border-radius: 10px;
-}
 
 .flex-item:hover {
     transform: scale(1.01);
     overflow: hidden;
     font-size: 40px;
 }
+
 
 .flex-item::after {
     content: '';
@@ -141,17 +115,53 @@ body {
     text-align: center;
 }
 
+
+.flex-item {
+    position: relative;
+    flex: 0 0 calc(50vh - 20px); 
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px 1px black;
+    font-size: 35px;
+    font-weight: 900;
+    background-color: antiquewhite;
+    transition: 0.5s;
+    color: #008000;
+    border-radius: 10px;
+    margin: 10px;
+}
+.flex {
+    width: 80%;
+    box-shadow: 0 0 10px 1px black;
+    margin: 50px auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    overflow-x: auto;
+    background-image: linear-gradient(to right, #964b00, #ffc499);
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: thin; 
+    border-radius: 10px;
+}
 .parent {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    box-shadow: 0 0 10px 1px black;
+    box-shadow: 0 2px 1px black;
     flex-direction: row;
-    flex-wrap: wrap;
     gap: 50px;
     margin-bottom: 10px;
     background-image: linear-gradient(to left, #964b00, #ffc499);
+    overflow-x: auto;  
+    overflow-y: hidden; 
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: thin; 
 }
 
 .child {
