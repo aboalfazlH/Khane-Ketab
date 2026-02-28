@@ -1,4 +1,4 @@
-<div class="header">
+<header class="header">
     <ol class="ol">
         <li class="li-1 li"><a href="{% url 'contact' %}">تماس با ما</a></li>
         <li class="li-2 li"><a href="{% url 'about' %}">درباره ما</a></li>
@@ -12,9 +12,11 @@
         <li class="li-6 li"><a href="{% url 'accounts:login' %}">ورود</a></li>
         {% endif %}
     </ol>
-    <h1 class="h1-1">خانه کتاب</h1>
+    <h1 class="h1 h1-1">
+    <a style="color: green;" href="{% url 'main-page' %}">خانه کتاب</a>
+    </h1>
     <i class="fa fa-shopping-basket" style=" font-size: 30px;  transform: translateY(-600%); color: white;"></i>
-</div>
-<form class="form-1">
+<form action="" method="get" class="form-1">
     <input class="in-search" type="search" placeholder="جستجوی کتاب">
 </form>
+</header>

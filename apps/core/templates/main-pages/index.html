@@ -9,7 +9,7 @@
         <div onclick="window.location='library/list?category={{ book_type }}'" class="flex-item">{{ label }}</div>
         {% endfor %}
     </div>
-    <div class="race"><a href="race.html">مسابقات کتاب خوانی دانش آموزی</a></div>
+    <div class="race"><a href="{% url 'race' %}">مسابقات کتاب خوانی دانش آموزی</a></div>
     <h1 class="h1-2">پر فروش ترین کتاب ها</h1>
     <div class="parent" dir="rtl">
         <div class="child">
@@ -37,24 +37,20 @@
 
     <h1 class="h1-2">کتاب های نفیس</h1>
     <div class="parent" dir="rtl">
+    {% for book in exquisite_books %}
         <div class="child">
-            <img src="image/3489284.jpg" alt="">
-            <h3>شاهنامه فردوسی</h3>
-            <p>12,800,000 ریال</p>
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+            <h3>{{ book.name }}</h3>
+            {% if book.price == 0 %}
+            <p>رایگان!</p>
+            {% else %}
+            <p>{{ book.price }}تومان</p>
+            {% endif %}
             <button>خرید</button>
         </div>
-        <div class="child">
-            <img src="image/5a1568c43d9f2df1e88f37dd3a7c4110d1923cba_1668861783.webp" alt="">
-            <h3>دیوان حافظ</h3>
-            <p>15,500,000 ریال</p>
-            <button>خرید</button>
-        </div>
-        <div class="child">
-            <img src="image/120655206.webp" alt="">
-            <h3>بوستان سعدی</h3>
-            <p>14,500,000 ریال</p>
-            <button>خرید</button>
-        </div>
+    {% endfor %}
         <div class="child">
             <a class="child-a" href="nafis.html"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
         </div>
@@ -62,14 +58,14 @@
     <h1 class="h1-2">نویسنده های معروف</h1>
     <div class="parent" dir="rtl">
     {% for author in famous_authors %}
-        <div class="child">
+        <div onclick="window.location='accounts/{{author.username}}/'" class="child">
             {{ author }}
         </div>
         {% empty %}
-        <div class="child">مگه اینجا نویسنده معروفم هست؟</div>
+        <div class="child">سایت نویسنده نداره:(</div>
     {% endfor %}
         <div class="child">
-            <a class="child-a" href="write.html"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
+            <a class="child-a" href="#"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
         </div>
     </div>
     <h2 class="h2-">نظرات خود را بیان کنید</h2>

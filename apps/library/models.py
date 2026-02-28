@@ -43,6 +43,7 @@ class Book(models.Model):
     is_verify = models.BooleanField(verbose_name="تائید شده(بررسی شده)",default=False)   
     is_active = models.BooleanField(verbose_name="فعال",default=False)   
     preview = models.FileField(verbose_name="پیش نمایش صفحات کتاب",validators=[FileExtensionValidator(allowed_extensions=["pdf"])],blank=True,null=True)
+    rate = models.PositiveSmallIntegerField(verbose_name="امتیاز",default=0)
 
     price = models.PositiveIntegerField(verbose_name="قیمت",default=0)
 

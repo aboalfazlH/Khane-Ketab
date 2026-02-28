@@ -70,7 +70,7 @@ body {
 .form-1 {
     display: flex;
     justify-content: center;
-    transform: translateY(-50%);
+    transform: translateY(-90%);
 }
 
 .in-search {
@@ -144,7 +144,8 @@ body {
     background-image: linear-gradient(to right, #964b00, #ffc499);
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory; 
-    scrollbar-width: thin; 
+    scrollbar-width: thin;
+    scrollbar-color: #964b00 #ffc499;
     border-radius: 10px;
 }
 .parent {
@@ -161,7 +162,8 @@ body {
     overflow-y: hidden; 
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory; 
-    scrollbar-width: thin; 
+    scrollbar-width: thin;
+    scrollbar-color: #964b00 #ffc499;
 }
 
 .child {
@@ -413,7 +415,7 @@ body {
     }
 
     .form-1 {
-        transform: translateY(0);
+        transform: translateY(-90%);
     }
 
     .in-search {
@@ -477,4 +479,9 @@ body {
         transform: translateY(-300%);
     }
 
+}
+@media (min-width:768px){
+    .form-1 {
+        transform: translateY(-200%);
+    }
 }

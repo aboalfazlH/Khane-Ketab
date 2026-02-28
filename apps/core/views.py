@@ -10,7 +10,8 @@ class MainPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["famous_authors"] = (
-            CustomUser.objects.filter().order_by("-rate")[:3]
+            CustomUser.objects.all().order_by("-rate")[:3]
         )
+        context["exquisite_books"] = Book.objects.all().order_by("-rate")[:3]
         context["book_types"] = BooksType
         return context
