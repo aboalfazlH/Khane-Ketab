@@ -12,26 +12,22 @@
     <div class="race"><a href="{% url 'race' %}">مسابقات کتاب خوانی دانش آموزی</a></div>
     <h1 class="h1-2">پر فروش ترین کتاب ها</h1>
     <div class="parent" dir="rtl">
+        {% for book in top_selling_books %}
+            <div class="child">
+            {% if book.book_image %}
+                <img src="{{ book.book_image.url }}" alt="{{ book }}">
+            {% endif %}
+                <h3>{{ book.name }}</h3>
+                {% if book.price == 0 %}
+                <p>رایگان!</p>
+                {% else %}
+                <p>{{ book.price }}تومان</p>
+                {% endif %}
+                <button>خرید</button>
+            </div>    
+        {% endfor %}
         <div class="child">
-            <img src="image/9422f3b135a64b75937b20761bc08e73.webp" alt="">
-            <h3>سفرنامه</h3>
-            <p>1000000 ریال</p>
-            <button>خرید</button>
-        </div>
-        <div class="child">
-            <img src="image/9422f3b135a64b75937b20761bc08e73.webp" alt="">
-            <h3>سفرنامه</h3>
-            <p>1000000 ریال</p>
-            <button>خرید</button>
-        </div>
-        <div class="child">
-            <img src="image/9422f3b135a64b75937b20761bc08e73.webp" alt="">
-            <h3>سفرنامه</h3>
-            <p>1000000 ریال</p>
-            <button>خرید</button>
-        </div>
-        <div class="child">
-            <a class="child-a" href="forosh.html"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
+            <a class="child-a" href="nafis.html"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
         </div>
     </div>
 

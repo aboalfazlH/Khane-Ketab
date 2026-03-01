@@ -13,5 +13,6 @@ class MainPageView(TemplateView):
             CustomUser.objects.all().order_by("-rate")[:3]
         )
         context["exquisite_books"] = Book.objects.all().order_by("-rate")[:3]
+        context["top_selling_books"] = Book.get_top_selling_books(3)
         context["book_types"] = BooksType
         return context
