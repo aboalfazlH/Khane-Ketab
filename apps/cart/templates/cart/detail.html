@@ -6,12 +6,13 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+<h2>خرید های شما</h2>
 <table>
     <tr>
-        <td>نام کتاب</td>
-        <td>تعداد</td>
-        <td>قیمت یک عدد از کتاب</td>
-        <td>قیمت کلی</td>
+        <th>نام کتاب</th>
+        <th>تعداد</th>
+        <th>قیمت یک عدد از کتاب</th>
+        <th>قیمت کلی</th>
     </tr>
     {% for book in books %}
     <tr>
@@ -19,8 +20,8 @@
         <td>{{ book.count }}</td>
         <td>{{ book.book.price }}</td>
         <td>{{ book.total_price }}</td>
-    {% endfor %}
     </tr>
+    {% endfor %}
 </table>
-<h1>قیمت تمام اجناس:{{ book.cart.total_price }}</h1>
+<h3>قیمت تمام اجناس:{{ cart.total_price }}تومان </h3>
 {% endblock content %}

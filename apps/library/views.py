@@ -7,7 +7,6 @@ from .forms import BookForm
 
 class BookListView(generic.ListView):
     model = Book
-    model = Book
     context_object_name = "books"
     template_name = "library/book-list.html"
     def get_context_data(self, **kwargs):

@@ -40,7 +40,7 @@ class Question(models.Model):
 class Ask(models.Model):
     user = models.ForeignKey(CustomUser,on_delete=models.CASCADE,verbose_name="کاربر")
     question = models.ForeignKey(Question,on_delete=models.CASCADE,verbose_name="سوال")
-    user_guess = models.CharField(verbose_name="حدس کاربر",choices=Options,max_length=200)
+    user_guess = models.CharField(verbose_name="حدس کاربر",choices=Options,max_length=200,blank=True,null=True)
 
     @property
     def ask_is_true(self):

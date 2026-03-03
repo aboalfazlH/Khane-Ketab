@@ -41,6 +41,10 @@ class CartDetailView(generic.ListView):
     context_object_name = "books"
     def get_queryset(self):
         return BuyBook.objects.filter(cart__user=self.request.user,complete=False)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cart"] = Cart.objects.get(user=self.request.user)
+        return context
 
 class CompleteBuyView(generic.View):
     def get(self, request, *args, **kwargs):

@@ -5,7 +5,7 @@ class Cart(models.Model):
     @property
     def total_price(self):
         books_in_cart = self.buybook_set.filter(complete=False)
-        total = sum(item.book.price for item in books_in_cart)
+        total = sum(item.book.price*item.count for item in books_in_cart)
         return total
     
     def __str__(self):
