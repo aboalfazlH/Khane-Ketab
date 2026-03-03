@@ -10,6 +10,11 @@ class Cart(models.Model):
     
     def __str__(self):
         return f"سبد خرید {self.user}"
+    
+    class Meta:
+        verbose_name = "سبد خرید"
+        verbose_name_plural = "سبد های خرید"
+    
 
 class BuyBook(models.Model):
     book = models.ForeignKey('library.Book',on_delete=models.CASCADE)
@@ -21,3 +26,8 @@ class BuyBook(models.Model):
         return self.count * self.book.price
     def __str__(self):
         return f"کتاب {self.book}"
+    
+    class Meta:
+        verbose_name = "محصول"
+        verbose_name_plural = "محصولات"
+    

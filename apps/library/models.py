@@ -50,6 +50,11 @@ class Book(models.Model):
 
     author = models.ForeignKey(CustomUser,on_delete=models.CASCADE,verbose_name="نویسنده")
 
+    class Meta:
+        verbose_name = "کتاب"
+        verbose_name_plural = "کتاب ها"
+    
+
     @staticmethod
     def get_top_selling_books(limit=5):
         sold_books_data = BuyBook.objects.filter(complete=True).values('book').annotate(
@@ -93,3 +98,8 @@ class LibraryCard(models.Model):
     
     def __str__(self):
         return f"کارت کتابخانه ی {self.user}"
+    
+    class Meta:
+        verbose_name = "کارت کتابخانه"
+        verbose_name_plural = "کارت های کتابخانه"
+    
