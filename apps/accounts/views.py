@@ -38,7 +38,7 @@ class LogoutView(generic.View,mixins.LoginRequiredMixin):
 class UserPannelView(generic.DetailView):
     model = CustomUser
     template_name = "accounts/registration/pannel.html"
-    context_object_name = "user"
+    context_object_name = "profile"
     slug_field = "username"
     slug_url_kwarg = "username"
 

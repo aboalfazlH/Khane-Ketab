@@ -1,15 +1,15 @@
 {% extends 'base/base.html' %}
 
 {% block title %}
-پروفایل {{ user }}
+پروفایل {{ profile }}
 {% endblock title %}
 
 {% block content %}
-<h1>پروفایل {{ user }}</h1>
+<h1>پروفایل {{ profile }}</h1>
 <div>
 <p>کارت کتابخانه</p>
-<p>نام: {{ user.first_name }}</p>
-<p>نام خانوادگی: {{ user.last_name }}</p>
+<p>نام: {{ profile.first_name }}</p>
+<p>نام خانوادگی: {{ profile.last_name }}</p>
 <p>سن:{% if not library_card.show_age %}پنهان شده توسط کاربر{% else %}{{library_card.age}}{% endif %}</p>
 <p>شهر:{% if not library_card.show_city %}پنهان شده توسط کاربر{% else %}{{library_card.city}}{% endif %}</p>
 <p>پایه تحصیلی:{% if not library_card.show_grade %}پنهان شده توسط کاربر{% else %}{{library_card.grade}}{% endif %}</p>
