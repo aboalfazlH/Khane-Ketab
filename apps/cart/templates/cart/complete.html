@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<form action='' method='post'>
+{% csrf_token %}
+<h1>دکمه ی تائید را فشار دهید تا خرید شما ثبت شود</h1>
+<button type='submit'>تائید</button>
+</form>
+{% endblock content %}

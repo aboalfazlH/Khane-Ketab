@@ -13,7 +13,7 @@
     <h1 class="h1-2">پر فروش ترین کتاب ها</h1>
     <div class="parent" dir="rtl">
         {% for book in top_selling_books %}
-            <div class="child">
+            <div onclick="window.location='library/book/{{ book.id }}'" class="child">
             {% if book.book_image %}
                 <img src="{{ book.book_image.url }}" alt="{{ book }}">
             {% endif %}
@@ -23,7 +23,7 @@
                 {% else %}
                 <p>{{ book.price }}تومان</p>
                 {% endif %}
-                <button>خرید</button>
+                {% include "inc/add-to-cart.html" %}
             </div>    
         {% endfor %}
         <div class="child">
@@ -34,7 +34,7 @@
     <h1 class="h1-2">کتاب های نفیس</h1>
     <div class="parent" dir="rtl">
     {% for book in exquisite_books %}
-        <div class="child">
+        <div onclick="window.location='library/book/{{ book.id }}'" class="child">
         {% if book.book_image %}
             <img src="{{ book.book_image.url }}" alt="{{ book }}">
         {% endif %}
@@ -44,7 +44,7 @@
             {% else %}
             <p>{{ book.price }}تومان</p>
             {% endif %}
-            <button>خرید</button>
+            {% include "inc/add-to-cart.html" %}
         </div>
     {% endfor %}
         <div class="child">

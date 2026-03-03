@@ -1,10 +1,26 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block title %}
 {% endblock title %}
+
 {% block content %}
-{% for book in books %}
-<h1>{{ book.book }}</h1>
-<p>{{ book.count }} عدد</p>
-{% endfor %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+<table>
+    <tr>
+        <td>نام کتاب</td>
+        <td>تعداد</td>
+        <td>قیمت یک عدد از کتاب</td>
+        <td>قیمت کلی</td>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.book }}</td>
+        <td>{{ book.count }}</td>
+        <td>{{ book.book.price }}</td>
+        <td>{{ book.total_price }}</td>
+    {% endfor %}
+    </tr>
+</table>
+<h1>قیمت تمام اجناس:{{ book.cart.total_price }}</h1>
 {% endblock content %}

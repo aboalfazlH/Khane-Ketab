@@ -58,7 +58,7 @@ button {
             {% else %}
             {{ book.price }}
             {% endif %}</p>
-            <button class="btn btn-primary">خرید</button>
+            {% include "inc/add-to-cart.html" %}
         </div>
     {% endfor %}
     </div>

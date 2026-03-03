@@ -1,0 +1,12 @@
+table,tr,td {
+    border: solid 2px black;
+    border-collapse: collapse;
+}
+table {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+}
+table,tr,td {
+    width: 50vh;
+}
