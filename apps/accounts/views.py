@@ -46,3 +46,11 @@ class UserPannelView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context["library_card"]= LibraryCard.objects.get(user=self.object)
         return context
+
+class Famous_Authors(generic.ListView):
+    model = CustomUser
+    template_name = "accounts/authors.html"
+    context_object_name = "authors"
+
+    def get_queryset(self):
+        return CustomUser.objects.all().order_by("-rate")

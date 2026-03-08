@@ -3,22 +3,21 @@
 {% block title %}
 {% endblock title %}
 
-{% block meta %}
-{% endblock meta %}
-
-{% block styles %}
-{% endblock styles %}
-
 {% block content %}
 <h1>آزمون {{ race.title }}</h1>
+
 <form action='' method='post'>
-{% for question in questions %}
-{{ question.text }}
-<input type="text" name="{{ question.question_number }}">{{ question.option_1 }}
-<input type="text" name="{{ question.question_number }}">{{ question.option_2 }}
-<input type="text" name="{{ question.question_number }}">{{ question.option_3 }}
-<input type="text" name="{{ question.question_number }}">{{ question.option_4 }}
-{% endfor %}
-<button type='submit'>تائید</button>
+<input type="hidden" name="id" value="{{ race.id }}">
+{% csrf_token %}
+<ol>
+    {% for question in questions %}
+    <li>{{ question.text }}</li>
+    <input type="radio" name="{{ question.question_number }}" value="{{ question.option_1 }}">{{ question.option_1 }}
+    <input type="radio" name="{{ question.question_number }}" value="{{ question.option_2 }}">{{ question.option_2 }}
+    <input type="radio" name="{{ question.question_number }}" value="{{ question.option_3 }}">{{ question.option_3 }}
+    <input type="radio" name="{{ question.question_number }}" value="{{ question.option_4 }}">{{ question.option_4 }}
+    {% endfor %}
+    <button type='submit'>تائید</button>
+</ol>
 </form>
 {% endblock content %}

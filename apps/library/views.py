@@ -12,6 +12,12 @@ class BookListView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         cat = self.request.GET.get("category")
+        filter = self.request.GET.get("filter")
+        if filter == "nafis":
+            context["books"] = Book.objects.filter(is_active=True,is_verify=True).order_by("-rate")
+            print(context["books"])
+        if filter == "most_sell":
+            context["books"] = Book.get_top_selling_books("all")
         if cat:
             context["books"] = Book.objects.filter(is_verify=True,is_active=True,book_type=cat)
         else:

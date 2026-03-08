@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<style>
+.parent {
+    overflow-x: auto;
+    display: flex;
+}
+.child {
+    flex: 0%;
+}
+</style>
+<div class="parent" dir="rtl">
+
+{% for author in authors %}
+<div onclick="window.location='../{{author.username}}/'"   class="child">
+            {{ author }}
+</div>        
+{% endfor %}
+</div>
+{% endblock content %}

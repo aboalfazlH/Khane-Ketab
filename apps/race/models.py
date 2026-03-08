@@ -10,6 +10,7 @@ Options = [
     ("option_4","گزینه ی چهار"),
 ]
 
+
 class Race(models.Model):
     title = models.CharField(verbose_name="موضوع",max_length=110)
     books = models.ManyToManyField(Book,related_name="races",verbose_name="کتاب ها")

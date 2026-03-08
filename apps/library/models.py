@@ -56,7 +56,7 @@ class Book(models.Model):
     
 
     @staticmethod
-    def get_top_selling_books(limit=5):
+    def get_top_selling_books(limit):
         sold_books_data = BuyBook.objects.filter(complete=True).values('book').annotate(
             total_sold=models.Sum('count')
         )
@@ -67,7 +67,7 @@ class Book(models.Model):
 
         sold_counts = {item['book']: item['total_sold'] for item in sold_books_data}
 
-        top_books = Book.objects.filter(id__in=book_ids).annotate(
+        top_books = Book.objects.filter(id__in=book_ids,is_active=True,is_verify=True).annotate(
             actual_sold_count=models.F('id')
         ).order_by('-actual_sold_count') 
 
@@ -77,7 +77,8 @@ class Book(models.Model):
             result_list.append(book)
 
         result_list.sort(key=lambda x: x.total_sold, reverse=True)
-
+        if limit == "all":
+            return result_list
         return result_list[:limit]
 
     def __str__(self):

@@ -27,7 +27,7 @@
             </div>    
         {% endfor %}
         <div class="child">
-            <a class="child-a" href="nafis.html"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
+            <a class="child-a" href="library/list?filter=most_sell"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
         </div>
     </div>
 
@@ -48,7 +48,7 @@
         </div>
     {% endfor %}
         <div class="child">
-            <a class="child-a" href="nafis.html"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
+            <a class="child-a" href="library/list?filter=nafis"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
         </div>
     </div>
     <h1 class="h1-2">نویسنده های معروف</h1>
@@ -61,7 +61,7 @@
         <div class="child">سایت نویسنده نداره:(</div>
     {% endfor %}
         <div class="child">
-            <a class="child-a" href="#"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
+            <a class="child-a" href="{% url 'accounts:authors' %}"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
         </div>
     </div>
     <h2 class="h2-">نظرات خود را بیان کنید</h2>
