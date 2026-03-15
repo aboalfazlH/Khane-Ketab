@@ -17,7 +17,7 @@
     <a style="color: green;" href="{% url 'main-page' %}">خانه کتاب</a>
     </h1>
     <a href="{% url 'cart-detail'  %}"><i  class="fa fa-shopping-basket" style=" font-size: 30px;  transform: translateY(-600%); color: white;"></i></a>
-<form action="" method="get" class="form-1">
-    <input class="in-search" type="search" placeholder="جستجوی کتاب">
+<form action="{% url 'search' %}" method="get" class="form-1">
+    <input class="in-search" name="q" value="{{ request.GET.q|default:'' }}"  type="search" placeholder="جستجوی کتاب">
 </form>
 </header>

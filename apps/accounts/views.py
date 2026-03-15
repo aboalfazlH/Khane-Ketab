@@ -2,10 +2,39 @@ from django.shortcuts import render,redirect
 from django.views import generic
 from .forms import SignUpForm
 from django.urls import reverse_lazy
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import UsernameField
+from django import forms
 from django.contrib.auth import login,logout,mixins
 from .models import CustomUser
 from apps.library.models import LibraryCard
+from django.contrib.auth import authenticate
+
+class LoginForm(forms.Form):
+    username = UsernameField(label="",widget=forms.TextInput(attrs={"autofocus": True,"placeholder":"شماره همراه"}))
+    password = forms.CharField(
+        label="",
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "current-password","placeholder":"رمز عبور"}),
+    )
+
+    def __init__(self, *args, request=None, **kwargs):
+        self.request = request
+        super().__init__(*args, **kwargs)
+        self._user = None
+
+    def clean(self):
+        cleaned = super().clean()
+        username = cleaned.get("username")
+        password = cleaned.get("password")
+        if username and password:
+            user = authenticate(self.request, username=username, password=password)
+            if user is None:
+                raise forms.ValidationError("نام کاربری یا رمز عبور اشتباه است.")
+            self._user = user
+        return cleaned
+
+    def get_user(self):
+        return self._user
 
 class SignUpView(generic.CreateView):
     form_class = SignUpForm
@@ -19,7 +48,7 @@ class SignUpView(generic.CreateView):
 
 class LoginView(generic.FormView):
     
-    form_class = AuthenticationForm
+    form_class = LoginForm
     template_name = "accounts/registration/register.html"
     success_url = reverse_lazy("main-page")
     

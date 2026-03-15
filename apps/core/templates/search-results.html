@@ -1,0 +1,212 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<h4>کتاب های یافت شده ی  شعری</h4>
+<div class="parent" dir="rtl">
+{% for book in poetry %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>کتاب های یافت شده ی  مذهبی و دینی</h4>
+<div class="parent" dir="rtl">
+{% for book in religious %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>کتاب های یافت شده ی  داستانی</h4>
+<div class="parent" dir="rtl">
+{% for book in story %}
+<div onclick="window.location='../library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>کتاب های یافت شده ی  درسی</h4>
+<div class="parent" dir="rtl">
+{% for book in lesson %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>کتاب های یافت شده ی  کمدی</h4>
+<div class="parent" dir="rtl">
+{% for book in comedy %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>کتاب های یافت شده ی  جنگی</h4>
+<div class="parent" dir="rtl">
+{% for book in war %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>زندگی نامه های یافت شده</h4>
+<div class="parent" dir="rtl">
+{% for book in autobiography %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>کتاب های یافت شده ی  عاشقانه</h4>
+<div class="parent" dir="rtl">
+{% for book in romance %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+<div>
+<h4>کتاب های یافت شده ی  هنری</h4>
+<div class="parent" dir="rtl">
+{% for book in artistic %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>سفرنامه های یافت شده</h4>
+<div class="parent" dir="rtl">
+{% for book in travelogue %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>کتاب های یافت شده ی  تاریخی</h4>
+<div class="parent" dir="rtl">
+{% for book in historical %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+<h4>کتاب های یافت شده ی  سیاسی</h4>
+<div class="parent" dir="rtl">
+{% for book in political %}
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+        <h3>{{ book.name }}</h3>
+        {% if book.price == 0 %}
+        <p>رایگان!</p>
+        {% else %}
+        <p>{{ book.price }}تومان</p>
+        {% endif %}
+        {% include "inc/add-to-cart.html" %}
+</div>
+{% endfor %}
+</div>
+{% endblock content %}
