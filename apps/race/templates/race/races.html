@@ -61,7 +61,7 @@ button{
                 <p>{{ race.title }}</p>
             </div>
             <div class="test">
-                <a href="">
+                <a href="{% url 'quiz' %}?id={{ race.id }}">
                     <button>آزمون</button>
                 </a>
             </div>
