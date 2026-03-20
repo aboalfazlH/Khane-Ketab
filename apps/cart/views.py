@@ -2,9 +2,10 @@ from django.views import generic
 from .models import BuyBook,Cart
 from apps.library.models import Book
 from django.shortcuts import redirect,render
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class AddBookToCartView(generic.View):
+class AddBookToCartView(LoginRequiredMixin,generic.View):
     def get(self, request, book_id, *args, **kwargs):
         return self.add_to_cart(request, book_id=book_id,back_to_cart=True)
 
