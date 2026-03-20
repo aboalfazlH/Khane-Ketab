@@ -10,7 +10,7 @@ from apps.library.models import LibraryCard
 from django.contrib.auth import authenticate
 
 class LoginForm(forms.Form):
-    username = UsernameField(label="",widget=forms.TextInput(attrs={"autofocus": True,"placeholder":"شماره همراه"}))
+    username = UsernameField(label="",widget=forms.TextInput(attrs={"autofocus": True,"placeholder":"شماره همراه (+989012345678)"}))
     password = forms.CharField(
         label="",
         strip=False,

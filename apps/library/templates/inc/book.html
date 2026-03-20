@@ -1,0 +1,12 @@
+<div onclick="window.location='library/book/{{ book.id }}'" class="child">
+        {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="{{ book }}">
+        {% endif %}
+            <h3>{{ book.name }}</h3>
+            {% if book.price == 0 %}
+            <p>رایگان!</p>
+            {% else %}
+            <p>{{ book.price }}تومان</p>
+            {% endif %}
+            {% include "inc/add-to-cart.html" %}
+</div>

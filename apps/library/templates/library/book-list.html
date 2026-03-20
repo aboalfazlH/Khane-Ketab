@@ -48,17 +48,7 @@ button {
     <div dir="ltr" class="container">
     {% for book in books %}
         <div class="items">
-            {% if book.book_image %}
-            <img src="{{ book.book_image.url }}" alt="{{ book.name }}">
-            {% endif %}
-            <p>{{ book.name }}</p>
-            <p>
-            {% if book.price == 0 %}
-            رایگان!
-            {% else %}
-            {{ book.price }}
-            {% endif %}</p>
-            {% include "inc/add-to-cart.html" %}
+        {% include "inc/book.html" %}
         </div>
     {% endfor %}
     </div>

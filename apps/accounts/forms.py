@@ -32,6 +32,8 @@ class SignUpForm(UserCreationForm):
                 placeholder_text = 'رمز عبور'
             elif field_name == 'password2':
                 placeholder_text = 'تکرار رمز عبور'
+            if field_name == 'phone_number':
+                placeholder_text = 'شماره تلفن (989012345678+)'
 
             field.widget.attrs.update({
                 'placeholder': placeholder_text,
