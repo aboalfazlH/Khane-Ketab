@@ -64,7 +64,11 @@
             <a class="child-a" href="{% url 'accounts:authors' %}"><img src="{% static 'image/three-dots-menu-svgrepo-com.svg' %}" alt=""></a>
         </div>
     </div>
+    {% if user.is_authenticated %}
     <h2 class="h2-">نظرات خود را بیان کنید</h2>
     <textarea class="textarea"></textarea>
     <input class="submit" type="submit" value="ارسال">
+    {% else %}
+    <a href="{% url 'accounts:signup' %}" class="h2-">برای ارسال نظر خود،ثبت نام کنید</a>
+    {% endif %}
 {% endblock content %}

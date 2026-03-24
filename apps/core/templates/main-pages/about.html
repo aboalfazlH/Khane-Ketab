@@ -12,11 +12,12 @@
                 در این سایت یک کتابخانه و کتاب فروشی آنلاین داریم هر جای ایران که باشید کتاب ها از طریق اداره پست به دست
                 شما می رسند و در کتابخانه می توانید پی دی اف کتاب را بخرید
             </p>
+            {% if  %}
             <form>
-                <input type="text" required placeholder="نام و نام خانوادگی">
                 <textarea placeholder="نظرات خود را بیان کنید"></textarea>
                 <input type="submit" class="submit" value="ارسال">
-            </form>
+            </form>            
+            {% endif %}
         </div>
         <div class="image">
             <img src="{% static 'image/ketab.png' %}" alt="">
