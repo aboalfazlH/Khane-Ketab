@@ -29,9 +29,21 @@ th {
     color: white;
 }
 
+.all-products {
+    display: inline;
+}
+.button {
+    border: 1px solid black;
+    padding: 1%;
+    border-radius: 10px;
+    background-color:aqua;
+}
 
 @media (max-width:768px) {
     table {
         width: 100%;
+    }
+    .all-products {
+    display: block;
     }
 }

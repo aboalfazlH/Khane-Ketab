@@ -23,5 +23,7 @@
     </tr>
     {% endfor %}
 </table>
-<h3>قیمت تمام اجناس:{{ cart.total_price }}تومان </h3>
+<h3 class="all-products">قیمت تمام اجناس:{{ cart.total_price }}تومان </h3>
+
+<a href="{% url 'complete'  %}" class="button">کامل کردن خرید</a>
 {% endblock content %}
