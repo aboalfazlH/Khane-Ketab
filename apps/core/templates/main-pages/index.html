@@ -5,8 +5,8 @@
 {% endblock title %}
 {% block content %}
     <div class="flex">
-        {% for book_type,label in book_types %}
-        <div onclick="window.location='library/list?category={{ book_type }}'" class="flex-item">{{ label }}</div>
+        {% for book_type,label,class in book_types %}
+        <div onclick="window.location='library/list?category={{ book_type }}'" class="flex-item {{ class }}">{{ label }}</div>
         {% endfor %}
     </div>
     <div class="race"><a href="{% url 'race' %}">مسابقات کتاب خوانی دانش آموزی</a></div>

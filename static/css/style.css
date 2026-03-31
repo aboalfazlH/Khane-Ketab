@@ -233,6 +233,77 @@ body {
     margin: 10px auto;
     background-color: #964b00;
 }
+.one {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.two {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.three {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.four {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.five {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.six {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.seven {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.eight {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.nine {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: cلenter;
+}
+
+.ten {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.eleven {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.twelve {
+    background-image: url('../image/download\ \(9\).jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 .footer {
     width: 100%;

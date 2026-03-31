@@ -4,9 +4,42 @@ from apps.library.models import Book,BooksType
 from django.db.models import Q
 from django.shortcuts import render
 
+num = None
+BookTypes = list(BooksType)
+for book_type in range(len(BookTypes)):
+    i = book_type
+    book_type = list(BooksType[book_type])
+    match i+1:
+        case 1:
+            num="one"
+        case 2:
+            num="two"
+        case 3:
+            num="three"
+        case 4:
+            num="four"
+        case 5:
+            num="five"
+        case 6:
+            num="six"
+        case 7:
+            num="seven"
+        case 8:
+            num="eight"
+        case 9:
+            num="nine"
+        case 10:
+            num="ten"
+        case 11:
+            num="eleven"
+        case 12:
+            num="twelve"
+    book_type.append(num)
+    book_type = tuple(book_type)
 
-class MainPageView(generic.TemplateView):
+    BookTypes[i]=book_type
     
+class MainPageView(generic.TemplateView):    
     template_name="main-pages/index.html"
 
     def get_context_data(self, **kwargs):
@@ -16,7 +49,8 @@ class MainPageView(generic.TemplateView):
         )
         context["exquisite_books"] = Book.objects.all().order_by("-rate")[:3]
         context["top_selling_books"] = Book.get_top_selling_books(3)
-        context["book_types"] = BooksType
+        
+        context["book_types"] = BookTypes
         return context
 
 
