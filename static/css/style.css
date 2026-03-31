@@ -283,7 +283,7 @@ body {
 .nine {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: cلenter;
+    background-position: center;
 }
 
 .ten {
@@ -299,7 +299,6 @@ body {
 }
 
 .twelve {
-    background-image: url('../image/download\ \(9\).jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
